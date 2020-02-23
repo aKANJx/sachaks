@@ -12,60 +12,49 @@ import SceneKit
 
 struct GardenWrapperView: UIViewRepresentable {
     
-    func makeUIView(context: Context) -> UIView {
-        GardenViewController().view
+    @Binding var vegetables: [Vegetable]
+    
+    
+    func makeUIView(context: Context) -> SCNView {
+        SCNView()
     }
     
-    func updateUIView(_ uiView: UIView, context: Context) { }
-   
-}
-
-
-class GardenViewController: UIViewController {
-
-    var scnView: SCNView! {
-        if !(view is SCNView) {
-            view = SCNView()
-        }
-        return view as? SCNView
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func updateUIView(_ view: SCNView, context: Context) {
         let scene = SCNScene(named: "art.scnassets/Plaza.scn")!
-        scnView.scene = scene
-        scnView.allowsCameraControl = true
-        scnView.cameraControlConfiguration.rotationSensitivity = 0
-        scnView.cameraControlConfiguration.autoSwitchToFreeCamera = false
-        scnView.showsStatistics = true
+        view.scene = scene
+        view.allowsCameraControl = true
+        view.cameraControlConfiguration.rotationSensitivity = 0
+        view.cameraControlConfiguration.autoSwitchToFreeCamera = false
         var veggies = [SCNNode]()
-        for _ in 0...3 {
+        for _ in 0...vegetables.count {
             veggies.append(loadVeggie())
         }
-        scnView.prepare(veggies) { success in
+        view.prepare(veggies) { success in
             for veggie in veggies {
-                 self.scnView.scene?.rootNode.addChildNode(veggie)
+                view.scene?.rootNode.addChildNode(veggie)
             }
         }
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        scnView.addGestureRecognizer(tapGesture)
     }
     
     func loadVeggie() -> SCNNode {
-        let filePath = Bundle.main.path(forResource: "Radish", ofType: "scn", inDirectory: "art.scnassets")
+        let choice = Int.random(in: 0...1)
+        let filePath = Bundle.main.path(forResource: choice == 0 ? "Radish" : "ChildRadish", ofType: "scn", inDirectory: "art.scnassets")
         let refNode = SCNReferenceNode(url: URL(fileURLWithPath: filePath!))!
         refNode.position = SCNVector3(Int.random(in: -5...5), 0, Int.random(in: -5...5))
-        refNode.scale = SCNVector3(0.1, 0.1, 0.1)
+        refNode.scale = choice == 0 ? SCNVector3(0.1, 0.1, 0.1) : SCNVector3(0.3, 0.3, 0.3)
         refNode.load()
         return refNode
     }
     
-    @objc
-    func handleTap(_ gestureRecognize: UIGestureRecognizer) {
-        let p = gestureRecognize.location(in: scnView)
-        let hitResults = scnView.hitTest(p, options: [:])
-        if hitResults.count > 0 {
+    class Coordinator: NSObject {
+           var control: GardenWrapperView
+        
+        init(_ control: GardenWrapperView) {
+            self.control = control
         }
     }
 }

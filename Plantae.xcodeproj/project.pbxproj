@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,11 @@
 		571C6D04240289010012B589 /* GardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C6D03240289010012B589 /* GardenViewController.swift */; };
 		578675F62402E6E800FDBE74 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578675F52402E6E800FDBE74 /* MapView.swift */; };
 		578675F82402EEF100FDBE74 /* Vegetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578675F72402EEF100FDBE74 /* Vegetable.swift */; };
+		578675FE2402FDAE00FDBE74 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 578675FD2402FDAE00FDBE74 /* SwiftUICharts */; };
+		578676002402FDCF00FDBE74 /* VegetableDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578675FF2402FDCF00FDBE74 /* VegetableDetailView.swift */; };
+		578676042403011D00FDBE74 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578676032403011D00FDBE74 /* BottomSheetView.swift */; };
+		578676062403023000FDBE74 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578676052403023000FDBE74 /* Constants.swift */; };
+		5786760924030AF400FDBE74 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 5786760824030AF400FDBE74 /* CodeScanner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,9 @@
 		571C6D03240289010012B589 /* GardenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenViewController.swift; sourceTree = "<group>"; };
 		578675F52402E6E800FDBE74 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		578675F72402EEF100FDBE74 /* Vegetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vegetable.swift; sourceTree = "<group>"; };
+		578675FF2402FDCF00FDBE74 /* VegetableDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegetableDetailView.swift; sourceTree = "<group>"; };
+		578676032403011D00FDBE74 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		578676052403023000FDBE74 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5786760924030AF400FDBE74 /* CodeScanner in Frameworks */,
+				578675FE2402FDAE00FDBE74 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,8 +78,10 @@
 			children = (
 				578675F92402EF2100FDBE74 /* Models */,
 				571C6CE924027F4D0012B589 /* AppDelegate.swift */,
+				578676032403011D00FDBE74 /* BottomSheetView.swift */,
 				571C6CED24027F4D0012B589 /* ContentView.swift */,
 				571C6CFD240280000012B589 /* ExploreView.swift */,
+				578675FF2402FDCF00FDBE74 /* VegetableDetailView.swift */,
 				578675F52402E6E800FDBE74 /* MapView.swift */,
 				571C6CFF240282A30012B589 /* GardenView.swift */,
 				571C6D03240289010012B589 /* GardenViewController.swift */,
@@ -78,6 +90,7 @@
 				571C6CF424027F4E0012B589 /* LaunchScreen.storyboard */,
 				571C6CF724027F4E0012B589 /* Info.plist */,
 				571C6CF124027F4E0012B589 /* Preview Content */,
+				578676052403023000FDBE74 /* Constants.swift */,
 			);
 			path = Plantae;
 			sourceTree = "<group>";
@@ -114,6 +127,10 @@
 			dependencies = (
 			);
 			name = Plantae;
+			packageProductDependencies = (
+				578675FD2402FDAE00FDBE74 /* SwiftUICharts */,
+				5786760824030AF400FDBE74 /* CodeScanner */,
+			);
 			productName = Plantae;
 			productReference = 571C6CE624027F4D0012B589 /* Plantae.app */;
 			productType = "com.apple.product-type.application";
@@ -142,6 +159,10 @@
 				Base,
 			);
 			mainGroup = 571C6CDD24027F4D0012B589;
+			packageReferences = (
+				578675FC2402FDAE00FDBE74 /* XCRemoteSwiftPackageReference "ChartView" */,
+				5786760724030AF400FDBE74 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = 571C6CE724027F4D0012B589 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -171,8 +192,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				571C6D04240289010012B589 /* GardenViewController.swift in Sources */,
+				578676002402FDCF00FDBE74 /* VegetableDetailView.swift in Sources */,
+				578676042403011D00FDBE74 /* BottomSheetView.swift in Sources */,
 				578675F62402E6E800FDBE74 /* MapView.swift in Sources */,
 				578675F82402EEF100FDBE74 /* Vegetable.swift in Sources */,
+				578676062403023000FDBE74 /* Constants.swift in Sources */,
 				571C6CEA24027F4D0012B589 /* AppDelegate.swift in Sources */,
 				571C6CFE240280000012B589 /* ExploreView.swift in Sources */,
 				571C6D00240282A30012B589 /* GardenView.swift in Sources */,
@@ -372,6 +396,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		578675FC2402FDAE00FDBE74 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.8;
+			};
+		};
+		5786760724030AF400FDBE74 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		578675FD2402FDAE00FDBE74 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 578675FC2402FDAE00FDBE74 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+		5786760824030AF400FDBE74 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5786760724030AF400FDBE74 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 571C6CDE24027F4D0012B589 /* Project object */;
 }

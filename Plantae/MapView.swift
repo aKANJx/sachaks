@@ -12,6 +12,8 @@ import MapKit
 struct MapView: UIViewRepresentable {
     
     @Binding var vegetables: [Vegetable]
+    @Binding var selectedVegetable: Vegetable?
+    @Binding var bottomSheetShown: Bool
     
     
     func makeUIView(context: Context) -> MKMapView {
@@ -37,6 +39,10 @@ struct MapView: UIViewRepresentable {
         mapView.removeAnnotations(mapView.annotations)
         let annotations = vegetables.map { VegetableAnnotation(vegetable: $0) }
         mapView.addAnnotations(annotations)
+        if let selectedAnnotation = annotations.first(where: { $0.id == selectedVegetable?.id }) {
+            mapView.selectAnnotation(selectedAnnotation, animated: true)
+        }
+
     }
     
     class Coordinator: NSObject, MKMapViewDelegate, CLLocationManagerDelegate {
@@ -48,7 +54,11 @@ struct MapView: UIViewRepresentable {
         }
         
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-            <#code#>
+            guard let coordinate = view.annotation?.coordinate else { return }
+            let span = mapView.region.span
+            let region = MKCoordinateRegion(center: coordinate, span: span)
+            control.bottomSheetShown = true
+            mapView.setRegion(region, animated: true)
         }
     }
 }
