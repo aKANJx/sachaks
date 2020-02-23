@@ -14,6 +14,10 @@
 		571C6CF624027F4E0012B589 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 571C6CF424027F4E0012B589 /* LaunchScreen.storyboard */; };
 		571C6CFE240280000012B589 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C6CFD240280000012B589 /* ExploreView.swift */; };
 		571C6D00240282A30012B589 /* GardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C6CFF240282A30012B589 /* GardenView.swift */; };
+		571C6D02240287810012B589 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 571C6D01240287810012B589 /* art.scnassets */; };
+		571C6D04240289010012B589 /* GardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C6D03240289010012B589 /* GardenViewController.swift */; };
+		578675F62402E6E800FDBE74 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578675F52402E6E800FDBE74 /* MapView.swift */; };
+		578675F82402EEF100FDBE74 /* Vegetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578675F72402EEF100FDBE74 /* Vegetable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		571C6CF724027F4E0012B589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		571C6CFD240280000012B589 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		571C6CFF240282A30012B589 /* GardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenView.swift; sourceTree = "<group>"; };
+		571C6D01240287810012B589 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		571C6D03240289010012B589 /* GardenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenViewController.swift; sourceTree = "<group>"; };
+		578675F52402E6E800FDBE74 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		578675F72402EEF100FDBE74 /* Vegetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vegetable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +66,14 @@
 		571C6CE824027F4D0012B589 /* Plantae */ = {
 			isa = PBXGroup;
 			children = (
+				578675F92402EF2100FDBE74 /* Models */,
 				571C6CE924027F4D0012B589 /* AppDelegate.swift */,
 				571C6CED24027F4D0012B589 /* ContentView.swift */,
-				571C6CFF240282A30012B589 /* GardenView.swift */,
 				571C6CFD240280000012B589 /* ExploreView.swift */,
+				578675F52402E6E800FDBE74 /* MapView.swift */,
+				571C6CFF240282A30012B589 /* GardenView.swift */,
+				571C6D03240289010012B589 /* GardenViewController.swift */,
+				571C6D01240287810012B589 /* art.scnassets */,
 				571C6CEF24027F4E0012B589 /* Assets.xcassets */,
 				571C6CF424027F4E0012B589 /* LaunchScreen.storyboard */,
 				571C6CF724027F4E0012B589 /* Info.plist */,
@@ -76,6 +88,14 @@
 				571C6CF224027F4E0012B589 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		578675F92402EF2100FDBE74 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				578675F72402EEF100FDBE74 /* Vegetable.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				571C6CF624027F4E0012B589 /* LaunchScreen.storyboard in Resources */,
+				571C6D02240287810012B589 /* art.scnassets in Resources */,
 				571C6CF324027F4E0012B589 /* Preview Assets.xcassets in Resources */,
 				571C6CF024027F4E0012B589 /* Assets.xcassets in Resources */,
 			);
@@ -149,6 +170,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				571C6D04240289010012B589 /* GardenViewController.swift in Sources */,
+				578675F62402E6E800FDBE74 /* MapView.swift in Sources */,
+				578675F82402EEF100FDBE74 /* Vegetable.swift in Sources */,
 				571C6CEA24027F4D0012B589 /* AppDelegate.swift in Sources */,
 				571C6CFE240280000012B589 /* ExploreView.swift in Sources */,
 				571C6D00240282A30012B589 /* GardenView.swift in Sources */,
@@ -293,6 +317,7 @@
 				DEVELOPMENT_TEAM = 6F983ZW9E9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Plantae/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,6 +338,7 @@
 				DEVELOPMENT_TEAM = 6F983ZW9E9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Plantae/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

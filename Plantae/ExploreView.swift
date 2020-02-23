@@ -9,8 +9,12 @@
 import SwiftUI
 
 struct ExploreView: View {
+    
+    @State var vegetables = [
+        Vegetable(name: "Carrot", nickname: "Carromon", coordinate: .init(latitude: 38.76078, longitude: -121.5890)),
+        Vegetable(name: "Radish", nickname: "Radishmon", coordinate: .init(latitude: 38.16078, longitude: -121.2890))]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        MapView(vegetables: $vegetables)
     }
 }
 
