@@ -10,7 +10,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        TabView {
+            ExploreView()
+                .tabItem({
+                    Image("compass.fill")
+                    Text("Explore")
+                })
+            GardenView()
+                .tabItem({
+                    Image("garden.fill")
+                    Text("My Garden")
+                })
+        }
+        .accentColor(Color(red: 34/255, green: 139/255, blue: 34/255))
     }
 }
 
